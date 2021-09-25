@@ -61,4 +61,9 @@ public class MyController {
 		return this.courseService.editCourse(Long.parseLong(courseId),course);
 	}
 	
+	@GetMapping("/coursesdelete/{courseId}")
+	public Course deleteCourse(@PathVariable String courseId)
+	{
+		return this.courseService.deleteCourse(Long.parseLong(courseId));
+	}
 }

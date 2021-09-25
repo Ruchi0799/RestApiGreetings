@@ -66,9 +66,26 @@ public class CourseServiceImpl implements CourseService {
 		return c;
 		//return null;
 	}
+
+	@Override
+	public Course deleteCourse(long courseId) {
+		// TODO Auto-generated method stub
+		
+		Course c=null;
+		for(Course course2:list)
+		{
+			if(course2.getId()==courseId)
+			{
+				c=course2;
+				//c.setId(c.getId());
+				list.remove(c);
+				break;
+			}
+		}
+		return c;
 	
-//	public Course getCourse() {
-//		return this.courseService.getCourse(courseID);
-//	}
+	}
+	
+
 
 }
