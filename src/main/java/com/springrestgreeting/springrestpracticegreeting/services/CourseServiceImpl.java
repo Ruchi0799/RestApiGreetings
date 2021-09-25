@@ -41,6 +41,31 @@ public class CourseServiceImpl implements CourseService {
 		}
 		return c;
 	}
+
+	@Override
+	public Course addCourse(Course course) {
+		// TODO Auto-generated method stub
+		list.add(course);
+		return course;
+	}
+
+	@Override
+	public Course editCourse(long courseId,Course course) {
+		// TODO Auto-generated method stub
+		Course c=null;
+		for(Course course1:list)
+		{
+			if(course1.getId()==courseId)
+			{
+				c=course1;
+				//c.setId(c.getId());
+				c.setName(course.getName());
+				break;
+			}
+		}
+		return c;
+		//return null;
+	}
 	
 //	public Course getCourse() {
 //		return this.courseService.getCourse(courseID);
